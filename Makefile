@@ -63,6 +63,7 @@ run:
 		-e ENABLE_MANAGESIEVE=1 \
 		--cap-add=SYS_PTRACE \
 		-e PERMIT_DOCKER=host \
+		-e SA_SPAM_DESTINY="D_DISCARD" \
 		-e DMS_DEBUG=0 \
 		-h mail.my-domain.com -t $(NAME)
 	sleep 15
