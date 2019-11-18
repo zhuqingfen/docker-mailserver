@@ -100,3 +100,6 @@ header_checks = pcre:/etc/postfix/maps/header_checks.pcre
 
 # Remove unwanted headers that reveail our privacy
 smtp_header_checks = pcre:/etc/postfix/maps/sender_header_filter.pcre
+
+# Report bounce to the postmaster
+notify_classes = bounce, delay, policy, protocol, resource, software
