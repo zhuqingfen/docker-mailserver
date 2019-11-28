@@ -1,7 +1,7 @@
 version: '2'
 services:
   mail:
-    image: tvial/docker-mailserver:latest
+    image: docker-adobe-campaign-integro-snapshot.dr-uw2.adobeitc.com/docker-mailserver:latest
     hostname: ${HOSTNAME}
     domainname: ${DOMAINNAME}
     container_name: ${CONTAINER_NAME}
@@ -10,6 +10,8 @@ services:
     - "143:143"
     - "587:587"
     - "993:993"
+    - "110:110"
+    - "995:995"
     volumes:
     - maildata:/var/mail
     - mailstate:/var/mail-state
