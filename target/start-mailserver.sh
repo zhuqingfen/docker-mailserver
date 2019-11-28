@@ -124,6 +124,7 @@ function register_functions() {
 	_register_setup_function "_setup_dmarc_hostname"
 	_register_setup_function "_setup_postfix_hostname"
 	_register_setup_function "_setup_dovecot_hostname"
+        -register_setup_function "_setup_postfix_relay_domains"
 
 	_register_setup_function "_setup_postfix_smtputf8"
 	_register_setup_function "_setup_postfix_sasl"
@@ -546,6 +547,7 @@ function _setup_postfix_hostname() {
 	notify 'inf' "Applying hostname to /etc/postfix/main.cf"
 	postconf -e "myhostname = $HOSTNAME"
 	postconf -e "mydomain = $DOMAINNAME"
+        postconf -e "relay_domains = $RELAY_DOMAINS"
 }
 
 function _setup_dovecot_hostname() {
