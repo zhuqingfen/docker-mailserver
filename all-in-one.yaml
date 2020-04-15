@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: all-in-one-$testMethod
+  name: all-in-one-test
 spec:
   containers:
     - name: acc1
